@@ -1,6 +1,8 @@
 """
 @author: Xiaoyu Li
+
 Created on 11/7/2017
+a data repository of courses, students and instructors
 """
 
 from collections import defaultdict
@@ -68,6 +70,9 @@ class Repository():
         for name, major in self.majors.items():
             x_maj.add_row([major.dept, major.required, major.electives])
         print(x_maj)
+
+
+
 class Student():
     "to store all data about students"
     def __init__(self, cwid, name, dep):
@@ -84,6 +89,7 @@ class Student():
     def get_course():
         return self.stu_courses.keys()
 
+
     def __str__(self):
         return "<student: " + self.cwid + " " + self.name +">"
 
@@ -94,6 +100,7 @@ class Instructor():
         self.name = name
         self.dep = dep
         self.ins_courses = defaultdict(int)
+
         """add_student, getcourses, get student_cnt"""
 
     def __str__(self):
@@ -153,6 +160,7 @@ def main():
     repo.stu_table()
     print("Instructor Summary")
     repo.ins_table()
+
         
 if __name__ == "__main__":
     main()
